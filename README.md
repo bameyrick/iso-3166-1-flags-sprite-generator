@@ -60,15 +60,17 @@ async function myFn(): Promise<void> {
 
 ### Available options
 
-| Option          | Type    | description                                                                                            | Default value                       |
-| --------------- | ------- | ------------------------------------------------------------------------------------------------------ | ----------------------------------- |
-| center          | boolean | Whether to center the flag horizontally                                                                | true                                |
-| classPrefix     | string  | Prefix for css classes                                                                                 | flag                                |
-| cssFileName     | string  | Name for the generated css file                                                                        | flags                               |
-| demo            | boolean | Whether to create a demo file                                                                          | true                                |
-| demoDestination | string  | Destination for the demo html file. Will have no affect if demo is set to false                        | flags-demo                          |
-| lowecaseAlpha2  | boolean | Whether to set the alpha2 code in the css classnames to lowercase                                      | false                               |
-| spriteFileName  | string  | Name for the generated sprite png file                                                                 | flag-sprite                         |
-| spriteUrl       | string  | Background url for the sprite (excluding the file name)                                                | same as provided sprite destination |
-| width           | number  | Maximum width of the flags. Note, all flags will be the same height but not necessarily the same width | 60                                  |
-| silent          | boolean | Whether to suppress logging                                                                            | false                               |
+| Option            | Type    | description                                                                                            | Default value                       |
+| ----------------- | ------- | ------------------------------------------------------------------------------------------------------ | ----------------------------------- |
+| center            | boolean | Whether to center the flag horizontally                                                                | true                                |
+| classPrefix       | string  | Prefix for css classes                                                                                 | flag                                |
+| cssFileName       | string  | Name for the generated css file                                                                        | flags                               |
+| demo              | boolean | Whether to create a demo file                                                                          | true                                |
+| demoDestination   | string  | Destination for the demo html file. Will have no affect if demo is set to false                        | flags-demo                          |
+| dimensionsClasses | boolean | Whether to add dimensions classes                                                                      | false                               |
+| dimensionsSuffix  | string  | Suffix for dimensions classes                                                                          | dims                                |
+| lowecaseAlpha2    | boolean | Whether to set the alpha2 code in the css classnames to lowercase                                      | false                               |
+| spriteFileName    | string  | Name for the generated sprite png file                                                                 | flag-sprite                         |
+| spriteUrl         | string  | Background url for the sprite (excluding the file name)                                                | same as provided sprite destination |
+| width             | number  | Maximum width of the flags. Note, all flags will be the same height but not necessarily the same width | 60                                  |
+| silent            | boolean | Whether to suppress logging                                                                            | false                               |
