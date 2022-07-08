@@ -5,7 +5,7 @@ Generate a css sprite for iso-3166-1 country flags
 [![GitHub release](https://img.shields.io/github/release/bameyrick/iso-3166-1-flags-sprite-generator.svg)](https://github.com/bameyrick/iso-3166-1-flags-sprite-generator/releases)
 [![Build Status](https://travis-ci.com/bameyrick/iso-3166-1-flags-sprite-generator.svg?branch=main)](https://travis-ci.com/github/bameyrick/iso-3166-1-flags-sprite-generator)
 [![codecov](https://codecov.io/gh/bameyrick/iso-3166-1-flags-sprite-generator/branch/main/graph/badge.svg)](https://codecov.io/gh/bameyrick/iso-3166-1-flags-sprite-generator)
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/)](https://www.codacy.com/manual/bameyrick/iso-3166-1-flags-sprite-generator)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/db81c43235c14f0db58a66dc07f161cc)](https://www.codacy.com/manual/bameyrick/iso-3166-1-flags-sprite-generator)
 
 - [ISO-3166-1 Flags Generator](#iso-3166-1-flags-generator)
   - [Install](#install)
