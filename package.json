@@ -1,0 +1,90 @@
+{
+  "name": "iso-3166-1-flags-sprite-generator",
+  "version": "1.0.0",
+  "description": "iso-3166-1 country flags css sprite generator",
+  "keywords": [
+    "Flags",
+    "ISO-3166-1",
+    "ISO-3166-2",
+    "Flag",
+    "Country",
+    "Countries",
+    "PNG",
+    "Sprite",
+    "css",
+    "alpha-2",
+    "Alpha2",
+    "generator",
+    "spritesheet"
+  ],
+  "author": "Ben Meyrick <bameyrick@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bameyrick/iso-3166-1-flags-sprite-generator/issues"
+  },
+  "homepage": "https://github.com/bameyrick/iso-3166-1-flags-sprite-generator#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bameyrick/iso-3166-1-flags-sprite-generator.git"
+  },
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/mjs/index.js",
+  "types": "./dist/mjs/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/mjs/index.js",
+      "require": "./dist/cjs/index.js"
+    }
+  },
+  "scripts": {
+    "fetch": "ts-node src/fetch.ts",
+    "build": "npm run fetch && tsc -p tsconfig.mjs.json && cpy package.mjs.json dist/mjs --rename package.json && tsc -p tsconfig.cjs.json && cpy package.cjs.json dist/cjs --rename package.json",
+    "lint": "npm run tidy-clean && eslint",
+    "tidy-clean": "rm -rf dist coverage",
+    "pre-commit": "lint-staged",
+    "prepare-husky": "npx husky-init",
+    "upgrade-interactive": "npm-check --update"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "prettier --print-width 140 --single-quote --arrow-parens avoid --trailing-comma es5 --parser typescript --write",
+      "eslint --fix --max-warnings 0"
+    ],
+    "*.js": [
+      "prettier --print-width 140 --single-quote --arrow-parens avoid --trailing-comma es5 --parser babel --write",
+      "eslint --fix --max-warnings 0"
+    ],
+    "*.json": ["prettier --print-width 140 --single-quote --trailing-comma es5 --parser json --write"],
+    "*.md": ["prettier --write", "remark"]
+  },
+  "devDependencies": {
+    "@qntm-code/utils": "^2.7.2",
+    "@types/glob": "^7.2.0",
+    "@types/node": "^18.0.3",
+    "@types/node-fetch": "^2.6.2",
+    "@types/sharp": "^0.30.4",
+    "@typescript-eslint/eslint-plugin": "^5.30.5",
+    "@typescript-eslint/parser": "^5.30.5",
+    "chalk": "^4.1.2",
+    "cpy-cli": "^4.1.0",
+    "eslint": "^8.19.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^7.0.0",
+    "iso-3166-1": "^2.1.1",
+    "lint-staged": "^13.0.3",
+    "node-fetch": "^2.6.7",
+    "npm-check": "^5.9.2",
+    "prettier": "^2.7.1",
+    "remark-cli": "^11.0.0",
+    "remark-lint": "^9.1.1",
+    "remark-preset-lint-recommended": "^6.1.2",
+    "ts-node": "^10.8.2",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "glob": "^8.0.3",
+    "sharp": "^0.30.7",
+    "spritesmith": "^3.4.0"
+  }
+}
