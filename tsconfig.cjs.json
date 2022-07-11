@@ -1,8 +1,0 @@
-{
-  "extends": "./tsconfig.json",
-  "include": ["src/**/*"],
-  "exclude": ["src/fetch.ts"],
-  "compilerOptions": {
-    "outDir": "dist/cjs"
-  }
-}

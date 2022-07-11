@@ -1,7 +1,10 @@
 #!/usr/bin/env node
 
-import * as yargs from 'yargs';
-import { FlagSpriteOptionsKey } from './create-flag-sprite';
+import yargs from 'yargs';
+import { hideBin } from 'yargs/helpers';
+
+import createFlagSprite from './create-flag-sprite';
+import { FlagSpriteOptions, FlagSpriteOptionsKey } from './types';
 
 const options: Record<FlagSpriteOptionsKey, yargs.Options> = {
   spriteDestination: {
@@ -88,17 +91,19 @@ const options: Record<FlagSpriteOptionsKey, yargs.Options> = {
   },
 };
 
-const args = yargs
+const parser = yargs(hideBin(process.argv))
   .scriptName('flags-sprite')
   .usage('$0 [options] <command ...>')
   .help('h')
   .alias('h', 'help')
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-var-requires
-  .version('v', require('../../package.json').version)
+
+  // .version('v', import('../package.json').version)
   .alias('v', 'V')
   .alias('v', 'version')
-  .options(options).argv;
+  .options(options);
 
-if (!(args instanceof Promise)) {
-  console.log(args);
-}
+const args = await parser.parse(process.argv.slice(2));
+
+await createFlagSprite(args as FlagSpriteOptions);
+
+export default parser;
